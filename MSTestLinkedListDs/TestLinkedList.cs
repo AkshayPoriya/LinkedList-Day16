@@ -96,5 +96,33 @@ namespace MSTestLinkedListDs
             Assert.AreEqual(expected3, actual3);
             Assert.AreEqual(expected4, actual4);
         }
+
+        /// <summary>
+        /// Tests the push in ascending order functionality.
+        /// </summary>
+        [TestMethod]
+        public void TestPushInAscendingOrder()
+        {
+            //arrange
+            linkedList = new LinkedList<int>();
+            linkedList.PushInAscendingOrder(56);
+            linkedList.PushInAscendingOrder(30);
+            linkedList.PushInAscendingOrder(40);
+            linkedList.PushInAscendingOrder(70);
+            //act
+            int actual1 = linkedList.Search(56);
+            int expected1 = 2;
+            int actual2 = linkedList.Search(30);
+            int expected2 = 0;
+            int actual3 = linkedList.Search(40);
+            int expected3 = 1;
+            int actual4 = linkedList.Search(70);
+            int expected4 = 3;
+            //assert
+            Assert.AreEqual(expected1, actual1);
+            Assert.AreEqual(expected2, actual2);
+            Assert.AreEqual(expected3, actual3);
+            Assert.AreEqual(expected4, actual4);
+        }
     }
 }

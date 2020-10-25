@@ -14,7 +14,7 @@ namespace LinkedListDS
     /// LinkedList Class
     /// </summary>
     /// <typeparam name="T"> Generic Type</typeparam>
-    public class LinkedList<T>
+    public class LinkedList<T> where T:IComparable
     {
         /// <summary>
         /// The head Node
@@ -224,6 +224,33 @@ namespace LinkedListDS
                 index++;
             }
             return -1;
+        }
+
+        /// <summary>
+        /// Pushes in ascending order.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        public void PushInAscendingOrder(T data)
+        {
+            if (this.head == null)
+            {
+                this.head = new Node<T>(data);
+                this.tail = this.head;
+                return;
+            }
+            Node<T> node = new Node<T>(data);
+            if (node.data.CompareTo(this.head.data) < 0)
+            {
+                PushFront(data);
+                return;
+            }
+            Node<T> temp = this.head;
+            while (temp.data.CompareTo(data) < 0 && temp.next != null && temp.next.data.CompareTo(data) < 0)
+            {
+                temp = temp.next;
+            }
+            node.next = temp.next;
+            temp.next = node;
         }
     }
 }
