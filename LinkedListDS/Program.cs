@@ -27,6 +27,8 @@ namespace LinkedListDS
             linkedList.Traverse();
             linkedList.PushAtIndex(1, 30);
             linkedList.Traverse();
+            linkedList.PopFront();
+            linkedList.Traverse();
         }
     }
 }
