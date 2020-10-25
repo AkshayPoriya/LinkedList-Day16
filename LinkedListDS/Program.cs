@@ -22,11 +22,11 @@ namespace LinkedListDS
             Console.WriteLine("Hello World!");
             LinkedList<int> linkedList = new LinkedList<int>();
             linkedList.Traverse();
-            linkedList.AddNode(56);
+            linkedList.PushBack(70);
             linkedList.Traverse();
-            linkedList.AddNode(30);
+            linkedList.PushFront(30);
             linkedList.Traverse();
-            linkedList.AddNode(70);
+            linkedList.PushFront(56);
             linkedList.Traverse();
         }
     }

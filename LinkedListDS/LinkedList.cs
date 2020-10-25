@@ -39,7 +39,7 @@ namespace LinkedListDS
         /// Adds the Node.
         /// </summary>
         /// <param name="data">The data.</param>
-        public void AddNode(T data)
+        public void PushBack(T data)
         {
             if (this.head == null)
             {
@@ -53,6 +53,19 @@ namespace LinkedListDS
             this.tail = temp;
         }
 
+        public void PushFront(T data)
+        {
+            if (this.head == null)
+            {
+                this.head = new Node<T>(data);
+                this.tail = this.head;
+                return;
+            }
+
+            Node<T> temp = new Node<T>(data);
+            temp.next = this.head;
+            this.head = temp;
+        }
         /// <summary>
         /// Traverses this instance.
         /// </summary>
