@@ -31,6 +31,7 @@ namespace MSTestLinkedListDs
             linkedList.PushBack(56);
             linkedList.PushBack(30);
             linkedList.PushBack(70);
+            linkedList.PushAtIndex(2, 40);
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace MSTestLinkedListDs
         /// <param name="expected">The expected.</param>
         [DataRow(56,0)]
         [DataRow(30, 1)]
-        [DataRow(70, 2)]
+        [DataRow(70, 3)]
         [DataRow(50, -1)]
         [TestMethod]
         public void TestSearchMethod(int data, int expected)
@@ -52,12 +53,20 @@ namespace MSTestLinkedListDs
             Assert.AreEqual(expected, actual);
         }
 
-        [DataRow(40,2)]
+        /// <summary>
+        /// Tests the PushAtIndex function.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <param name="expected">The expected.</param>
+        [DataRow(56, 0)]
+        [DataRow(30, 1)]
+        [DataRow(40, 2)]
+        [DataRow(70, 3)]
+        [DataRow(50, -1)]
         [TestMethod]
         public void TestPushAtIndex(int data, int expected)
         {
             //Arrange
-            linkedList.PushAtIndex(2, data);
             //Act
             int actual = linkedList.Search(data);
             //Assert
