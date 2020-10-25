@@ -156,6 +156,41 @@ namespace LinkedListDS
         }
 
         /// <summary>
+        /// Pops the node from given index.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        public void PopFromGivenIndex(int index)
+        {
+            if (this.head == null)
+            {
+                return;
+            }
+
+            Node<T> node = head;
+            int length = Count();
+            if(index >= length || index < 0)
+            {
+                Console.WriteLine("Invalid index for pop operation!");
+                return;
+            }
+            if(index == 0)
+            {
+                PopFront();
+                return;
+            }
+            if(index == length - 1)
+            {
+                PopBack();
+                return;
+            }
+            for(int i = 1; i < index; i++)
+            {
+                node = node.next;
+            }
+            node.next = node.next.next;
+        }
+
+        /// <summary>
         /// Traverses this instance.
         /// </summary>
         public void Traverse()
