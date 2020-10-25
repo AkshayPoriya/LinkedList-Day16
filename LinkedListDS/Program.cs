@@ -20,24 +20,16 @@ namespace LinkedListDS
         public static void Main(string[] args)
         {
             LinkedList<int> linkedList = new LinkedList<int>();
-            linkedList.PushBack(10);
+            linkedList.PushInAscendingOrder(56);
             linkedList.Traverse();
-            linkedList.PushBack(30);
+            linkedList.PushInAscendingOrder(30);
             linkedList.Traverse();
-            linkedList.PushFront(20);
+            linkedList.PushInAscendingOrder(40);
             linkedList.Traverse();
-            linkedList.PopBack();
+            linkedList.PushInAscendingOrder(70);
             linkedList.Traverse();
-            linkedList.PushAtIndex(0, 50);
+            linkedList.PushInAscendingOrder(32);
             linkedList.Traverse();
-            linkedList.PushFront(60);
-            linkedList.Traverse();
-            linkedList.PopFront();
-            linkedList.Traverse();
-            Console.WriteLine("Index of 20 : " + linkedList.Search(20));
-            Console.WriteLine("Index of 50 : " + linkedList.Search(50));
-            Console.WriteLine("Index of 70 : " + linkedList.Search(70));
-
         }
     }
 }
