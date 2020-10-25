@@ -97,6 +97,19 @@ namespace LinkedListDS
         }
 
         /// <summary>
+        /// Pops the front Node.
+        /// </summary>
+        public void PopFront()
+        {
+            if(this.head == null)
+            {
+                return;
+            }
+
+            this.head = this.head.next;
+        }
+
+        /// <summary>
         /// Traverses this instance.
         /// </summary>
         public void Traverse()
