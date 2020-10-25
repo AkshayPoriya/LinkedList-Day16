@@ -19,14 +19,13 @@ namespace LinkedListDS
         /// <param name="args">The arguments.</param>
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             LinkedList<int> linkedList = new LinkedList<int>();
             linkedList.Traverse();
             linkedList.PushBack(56);
             linkedList.Traverse();
-            linkedList.PushBack(30);
-            linkedList.Traverse();
             linkedList.PushBack(70);
+            linkedList.Traverse();
+            linkedList.PushAtIndex(1, 30);
             linkedList.Traverse();
         }
     }
